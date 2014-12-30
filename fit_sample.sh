@@ -6,11 +6,11 @@ n=`wc -l $USER_OBS | awk '{print $1}'`
 echo "Running N=$n Magphys Fits"
 
 seq $n | parallel --pipe -N 1 -n 1 -j 10 --delay 0.1 --progress \
-	 --joblog ./fit_sed.log --resume --resume-failed \
 	 --halt 2 --ungroup \
-	 ./fit_sed {#}
+	 bin/fit_sed {#}
 
 echo "Parallel Finished with Status: $?"
+
 # the log is not populated on the JHU machines for some reason
 # cat ./fit_sed.log
 

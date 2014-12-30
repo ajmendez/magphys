@@ -43,11 +43,11 @@ c     ==========================================================================
       integer nfilt,filt_id(nmax),fit(nmax),ifilt
       parameter(nmod=50001,nprop_sfh=24,nprop_ir=8)
       character*12 filt_name(nmax)
-      character*10 outfile1,outfile2
+      character*80 outfile1,outfile2
       character*500 filter_header
       character*8 gal_name(galmax),aux_name
       character*6 numz
-      character optlib*34,irlib*26
+      character optlib*80,irlib*80
       character filters*80,obs*80
 c     redshift libs
       integer nz,nzmax
@@ -189,7 +189,7 @@ c     READ FILE WITH OBSERVATIONS:
 
 c     READ FILE WITH REDSHIFTS OF THE MODEL LIBRARIES
       close(24)
-      open(24,file='zlibs.dat',status='old')
+      open(24,file='output/zlibs.dat',status='old')
       io=0
       nz=0
       do while(io.eq.0)
@@ -234,8 +234,8 @@ c     OUTPUT FILES
 c     name.fit: fit results, PDFs etc
 c     name.sed: best-fit SED
       aux_name=gal_name(i_gal)
-      outfile1=aux_name(1:largo(aux_name))//'.fit'
-      outfile2=aux_name(1:largo(aux_name))//'.sed'
+      outfile1='output/'//aux_name(1:largo(aux_name))//'.fit'
+      outfile2='output/'//aux_name(1:largo(aux_name))//'.sed'
       close(31) 
       open (31, file=outfile1, status='unknown')
       
@@ -1472,7 +1472,7 @@ c      outfile : .sed file (output)
 c     ===========================================================================
       implicit none
       character infile1*80,infile2*80
-      character*10 outfile
+      character*80 outfile
       integer nage,niw_opt,niw_ir,niw_tot
       integer i,imod,nburst,k
       integer i_opt,i_ir,indx
