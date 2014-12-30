@@ -1,0 +1,16 @@
+# In your .cshrc or .login file, define magphys as the directory which
+# contains the MAGPHYS programs (setenv magphys /full_path_to_MAGPHYS_directory)
+#
+# binary files containing filter responses and models
+#
+setenv FILTERS            $magphys/FILTERBIN.RES
+setenv OPTILIB		  $magphys/OptiLIB_cb07.bin
+setenv OPTILIBIS	  $magphys/OptiLIBis_cb07.bin
+setenv IRLIB	          $magphys/InfraredLIB.bin
+
+# user input files [this can be changed by user]
+#
+setenv USER_FILTERS	$magphys/eg_user_files/filters.dat
+setenv USER_OBS		$magphys/eg_user_files/observations.dat
+
+
