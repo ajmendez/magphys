@@ -12,7 +12,7 @@
 
 #
 export MAGPHYS="$HOME/raid/mass/magphys"
-export FILTERS="$MAGPHYS/FILTERBIN.RES"
+export FILTERS="$MAGPHYS/filters/FILTERBIN.RES"
 export OPTILIB="$MAGPHYS/libs/OptiLIB_cb07.bin"
 export OPTILIBIS="$MAGPHYS/libs/OptiLIBis_cb07.bin"
 export IRLIB="$MAGPHYS/libs/InfraredLIB.bin"

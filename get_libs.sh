@@ -2,20 +2,18 @@
 # Parallelized library builder.
 
 echo "Building Optical Libs"
-cat zlibs.dat | awk '{print $2 "\n 70.,0.30,0.70"}' \
+cat output/zlibs.dat | awk '{print $2 "\n 70.,0.30,0.70"}' \
 	| parallel --pipe -n 2 -j 10 --progress \
-		--joblog ./optic.log --resume --resume-failed \
 		--halt 2 --ungroup \
-		./get_optic_colors "{#}"
+		bin/get_optic_colors "{#}"
 
 optical_status="$?"
 
 echo "Building IR Libs"
-cat zlibs.dat | awk '{print $2 "\n 70.,0.30,0.70"}' \
+cat output/zlibs.dat | awk '{print $2 "\n 70.,0.30,0.70"}' \
 	| parallel --pipe -n 2 -j 10 --progress \
-		--joblog ./ir.log --resume --resume-failed \
 		--halt 2 --ungroup \
-		./get_infrared_colors "{#}"
+		bin/get_infrared_colors "{#}"
 
 ir_status="$?"
 

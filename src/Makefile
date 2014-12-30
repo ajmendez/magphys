@@ -6,31 +6,33 @@ FC = gfortran -std=legacy -ffixed-line-length-none
 .f.o:
 	$(FC) -c $<
 
-make_zgrid: make_zgrid.f filter.dec $(UTILIB)
-	$(FC) make_zgrid.f $(UTILIB) -o make_zgrid
-
-get_optic_colors: get_optic_colors.f filter.dec $(UTILIB)
-	$(FC) get_optic_colors.f $(UTILIB) -o get_optic_colors
-	
-get_infrared_colors: get_infrared_colors.f filter.dec $(UTILIB)
-	$(FC) get_infrared_colors.f $(UTILIB) -o get_infrared_colors
-
-fit_sed: fit_sed.f $(UTILIB)
-	$(FC) fit_sed.f $(UTILIB) -o fit_sed
-	
-read_optilib_bin: read_optilib_bin.f $(UTILIB)
-	$(FC) read_optilib_bin.f $(UTILIB) -o read_optilib_bin
-	
-read_irlib_bin: read_irlib_bin.f $(UTILIB)
-	$(FC) read_irlib_bin.f $(UTILIB) -o read_irlib_bin		
-
-clean:
-	$(RM) public_utilities.a $(OBJFILES)
-
 all:
 	make public_utilities.a
 	make make_zgrid get_optic_colors get_infrared_colors fit_sed
 	make read_optilib_bin read_irlib_bin
+
+
+make_zgrid: make_zgrid.f filter.dec $(UTILIB)
+	$(FC) make_zgrid.f $(UTILIB) -o ../bin/make_zgrid
+
+get_optic_colors: get_optic_colors.f filter.dec $(UTILIB)
+	$(FC) get_optic_colors.f $(UTILIB) -o ../bin/get_optic_colors
+	
+get_infrared_colors: get_infrared_colors.f filter.dec $(UTILIB)
+	$(FC) get_infrared_colors.f $(UTILIB) -o ../bin/get_infrared_colors
+
+fit_sed: fit_sed.f $(UTILIB)
+	$(FC) fit_sed.f $(UTILIB) -o ../bin/fit_sed
+	
+read_optilib_bin: read_optilib_bin.f $(UTILIB)
+	$(FC) read_optilib_bin.f $(UTILIB) -o ../bin/read_optilib_bin
+	
+read_irlib_bin: read_irlib_bin.f $(UTILIB)
+	$(FC) read_irlib_bin.f $(UTILIB) -o ../bin/read_irlib_bin		
+
+clean:
+	$(RM) public_utilities.a $(OBJFILES) 
+
 
 #---------------------------------------------------------------------------
 #commands to build library public_utilities.a

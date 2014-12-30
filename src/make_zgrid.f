@@ -65,7 +65,7 @@ c       READ FILE WITH OBSERVATIONS:
 
 c       OUTPUT FILE:
 	   close(21)
-	   open(21,file='zlibs.dat',status='unknown')
+	   open(21,file='output/zlibs.dat',status='unknown')
 
 
 c       OPTION: redshift grid or use exact z values
