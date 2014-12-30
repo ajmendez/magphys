@@ -254,8 +254,8 @@ c              (if diffz(1) not gt 0.005)
       endif
 
       write(numz,'(f6.4)') zlib(1)
-      optlib = 'starformhist_cb07_z'//numz//'.lbr'
-      irlib = 'infrared_dce08_z'//numz//'.lbr'
+      optlib = 'output_libs/starformhist_cb07_z'//numz//'.lbr'
+      irlib = 'output_libs/infrared_dce08_z'//numz//'.lbr'
       
       write(*,*) 'z= ',redshift(i_gal)
       write(*,*) 'optilib=',optlib

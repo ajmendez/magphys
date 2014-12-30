@@ -3,14 +3,15 @@
 #
 # binary files containing filter responses and models
 #
-setenv FILTERS            $magphys/FILTERBIN.RES
-setenv OPTILIB		  $magphys/OptiLIB_cb07.bin
-setenv OPTILIBIS	  $magphys/OptiLIBis_cb07.bin
-setenv IRLIB	          $magphys/InfraredLIB.bin
+setenv MAGPHYS    $HOME/raid/mass/magphys
+setenv FILTERS    $MAGPHYS/filters/FILTERBIN.RES
+setenv OPTILIB    $MAGPHYS/libs/OptiLIB_cb07.bin
+setenv OPTILIBIS  $MAGPHYS/libs/OptiLIBis_cb07.bin
+setenv IRLIB      $MAGPHYS/libs/InfraredLIB.bin
 
 # user input files [this can be changed by user]
 #
-setenv USER_FILTERS	$magphys/eg_user_files/filters.dat
-setenv USER_OBS		$magphys/eg_user_files/observations.dat
+setenv USER_FILTERS   $MAGPHYS/eg_user_files/filters.dat
+setenv USER_OBS       $MAGPHYS/eg_user_files/observations.dat
 
 

@@ -46,7 +46,7 @@ c       INPUT redshift
 
 c       OUTPUT file: catalogue of parameters & magnitudes @ redshift z
 	write(numz,'(f6.4)') z
-	outfile='infrared_dce08_z'//numz//'.lbr'
+	outfile='output_libs/infrared_dce08_z'//numz//'.lbr'
 	close (30)
         open (30,file=outfile,status='unknown')
 

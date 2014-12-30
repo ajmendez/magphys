@@ -1,5 +1,5 @@
 *.bin
-
+*.lbr
 
 # Compiled Object files
 *.slo

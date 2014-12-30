@@ -1,0 +1,25 @@
+#!/bin/bash
+# BASH env setup
+
+
+# In your .cshrc or .login file, define magphys as the directory which
+# contains the MAGPHYS programs (setenv magphys /full_path_to_MAGPHYS_directory)
+#
+# binary files containing filter responses and models
+#
+# Setup mass run with:
+# source .magphys_bashrc
+
+#
+export MAGPHYS="$HOME/raid/mass/magphys"
+export FILTERS="$MAGPHYS/FILTERBIN.RES"
+export OPTILIB="$MAGPHYS/libs/OptiLIB_cb07.bin"
+export OPTILIBIS="$MAGPHYS/libs/OptiLIBis_cb07.bin"
+export IRLIB="$MAGPHYS/libs/InfraredLIB.bin"
+
+# user input files [this can be changed by user]
+#
+export USER_FILTERS="$MAGPHYS/eg_user_files/filters.dat"
+export USER_OBS="$MAGPHYS/eg_user_files/observations.dat"
+
+
